@@ -77,13 +77,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onPause() {
         super.onPause();
-
-        SharedPreferences myFile1 = getSharedPreferences(PREFNAME, Activity.MODE_PRIVATE);
-        SharedPreferences.Editor myEditor = myFile1.edit();
-        String temp = txtColorSelected.getText().toString();
-        myEditor.putString("mydata", temp);
-        myEditor.commit();
-
+        saveStateData(txtColorSelected.getText().toString());
         Toast.makeText(context, "onPause", Toast.LENGTH_SHORT).show();
     }
 
@@ -96,21 +90,13 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-
-        SharedPreferences myFile = getSharedPreferences(PREFNAME, Activity.MODE_PRIVATE);
-        if ( (myFile != null) && (myFile.contains("mydata")) ) {
-            String temp = myFile.getString("mydata", "");
-            txtColorSelected.setText(temp);
-        }
-
+        updateMeUsingSavedStateData();
         Toast.makeText(context, "onResume", Toast.LENGTH_SHORT).show();
     }
 
     @Override
     protected void onStart() {
         super.onStart();
-        //if appropriate, change background color to chosen value
-        updateMeUsingSavedStateData();
         Toast.makeText(context, "onStart", Toast.LENGTH_SHORT).show();
     }
 
@@ -131,7 +117,7 @@ public class MainActivity extends AppCompatActivity {
     private void saveStateData(String chosenColor) {
         SharedPreferences myPrefContainer = getSharedPreferences(PREFNAME, Activity.MODE_PRIVATE);
         SharedPreferences.Editor myPrefEditor = myPrefContainer.edit();
-        String key = "chosenBackgroundColor", value = txtViewSpy.getText().toString();
+        String key = "chosenBackgroundColor", value = chosenColor;
         myPrefEditor.putString(key, value);
         myPrefEditor.commit();
     }
@@ -142,6 +128,7 @@ public class MainActivity extends AppCompatActivity {
         String defaultValue = "white";
         if (( myPrefContainer != null ) && myPrefContainer.contains(key)){
             String color = myPrefContainer.getString(key, defaultValue);
+            txtColorSelected.setText(color);
             setBackgroundColor(color, myScreen);
         }
     }
