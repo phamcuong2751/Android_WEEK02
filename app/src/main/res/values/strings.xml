@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">WEEK02</string>
+    <string name="lbl_btn_exit">Exit</string>
+    <string name="lbl_editText_hint_color">Pick Background</string>
+    <string name="lbl_txtView_spyText">spy box - try clicking HOME and BACK</string>
+    <string name="lbl_txtView_notice">Note: </string>
+    <string name="lbl_txtView_cuong">Cuong -> Red</string>
+    <string name="lbl_txtView_hau">Hau -> Green</string>
+    <string name="lbl_txtView_huy">Huy -> Blue</string>
+    <string name="lbl_txtView_toan">Toan -> Yellow</string>
+
+</resources>
