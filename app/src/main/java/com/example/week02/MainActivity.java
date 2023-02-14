@@ -107,10 +107,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void setBackgroundColor(String chosenColor, LinearLayout myScreen) {
-        if (chosenColor.contains("cuong")) myScreen.setBackgroundColor(getColor(R.color.red));
-        else if (chosenColor.contains("hau")) myScreen.setBackgroundColor(getColor(R.color.green));
-        else if (chosenColor.contains("huy")) myScreen.setBackgroundColor(getColor(R.color.blue));
-        else if (chosenColor.contains("toan")) myScreen.setBackgroundColor(getColor(R.color.yellow));
+        if (chosenColor.contains(getString(R.string.key_1))) myScreen.setBackgroundColor(getColor(R.color.red));
+        else if (chosenColor.contains(getString(R.string.key_2))) myScreen.setBackgroundColor(getColor(R.color.green));
+        else if (chosenColor.contains(getString(R.string.key_3))) myScreen.setBackgroundColor(getColor(R.color.blue));
+        else if (chosenColor.contains(getString(R.string.key_4))) myScreen.setBackgroundColor(getColor(R.color.yellow));
         else myScreen.setBackgroundColor(getColor(R.color.white));
     }
 

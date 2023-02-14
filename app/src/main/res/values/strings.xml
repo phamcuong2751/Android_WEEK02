@@ -8,5 +8,8 @@
     <string name="lbl_txtView_hau">Hau -> Green</string>
     <string name="lbl_txtView_huy">Huy -> Blue</string>
     <string name="lbl_txtView_toan">Toan -> Yellow</string>
-
+    <string name="key_1">cuong</string>
+    <string name="key_2">hau</string>
+    <string name="key_3">huy</string>
+    <string name="key_4">toan</string>
 </resources>
